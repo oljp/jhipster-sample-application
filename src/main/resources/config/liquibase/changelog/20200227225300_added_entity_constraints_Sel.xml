@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Sel.
+    -->
+    <changeSet id="20200227225300-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="sel_id"
+                                 baseTableName="sel_distinct_event"
+                                 constraintName="fk_sel_distinct_event_sel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sel"/>
+
+        <addForeignKeyConstraint baseColumnNames="distinct_event_id"
+                                 baseTableName="sel_distinct_event"
+                                 constraintName="fk_sel_distinct_event_distinct_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distinct_event"/>
+        
+        <addForeignKeyConstraint baseColumnNames="sel_id"
+                                 baseTableName="sel_distinct_event"
+                                 constraintName="fk_sel_distinct_event_sel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sel"/>
+
+        <addForeignKeyConstraint baseColumnNames="distinct_event_id"
+                                 baseTableName="sel_distinct_event"
+                                 constraintName="fk_sel_distinct_event_distinct_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distinct_event"/>
+        
+    </changeSet>
+</databaseChangeLog>

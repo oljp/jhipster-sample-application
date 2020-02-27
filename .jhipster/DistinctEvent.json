@@ -1,0 +1,49 @@
+{
+    "name": "DistinctEvent",
+    "fields": [
+        {
+            "fieldName": "provider",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataset",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sel",
+            "otherEntityRelationshipName": "distinctEvent",
+            "relationshipName": "sel",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sel",
+            "otherEntityRelationshipName": "distinctEvent",
+            "relationshipName": "initiatingSel",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sel",
+            "otherEntityRelationshipName": "distinctEvent",
+            "relationshipName": "associatedSel",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200227225200",
+    "entityTableName": "distinct_event",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
