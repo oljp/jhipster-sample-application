@@ -1,0 +1,49 @@
+{
+    "name": "Sel",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rhel",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "distinctEvent",
+            "otherEntityRelationshipName": "initiatingSel",
+            "relationshipName": "initiatingEvent",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "distinctEvent",
+            "otherEntityRelationshipName": "associatedSel",
+            "relationshipName": "associatedEvent",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "distinctEvent",
+            "otherEntityRelationshipName": "sel",
+            "relationshipName": "distinctEvent",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200227230300",
+    "entityTableName": "sel",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
