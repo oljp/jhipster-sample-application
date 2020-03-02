@@ -1,0 +1,26 @@
+entity DistinctEvent {
+  provider String
+  dataset String
+}
+
+entity Sel {
+  name String
+  rhel String
+}
+
+relationship ManyToMany {
+  DistinctEvent{initiatingSel} to Sel{initiatingEvent}
+  DistinctEvent{associatedSel} to Sel{associatedEvent}
+}
+
+// Set pagination options
+paginate DistinctEvent with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

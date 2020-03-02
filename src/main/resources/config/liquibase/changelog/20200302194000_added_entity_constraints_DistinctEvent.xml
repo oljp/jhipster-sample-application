@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DistinctEvent.
+    -->
+    <changeSet id="20200302194000-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="distinct_event_id"
+                                 baseTableName="distinct_event_initiating_sel"
+                                 constraintName="fk_distinct_event_initiating_sel_distinct_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distinct_event"/>
+
+        <addForeignKeyConstraint baseColumnNames="initiating_sel_id"
+                                 baseTableName="distinct_event_initiating_sel"
+                                 constraintName="fk_distinct_event_initiating_sel_initiating_sel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sel"/>
+        
+        <addForeignKeyConstraint baseColumnNames="distinct_event_id"
+                                 baseTableName="distinct_event_associated_sel"
+                                 constraintName="fk_distinct_event_associated_sel_distinct_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distinct_event"/>
+
+        <addForeignKeyConstraint baseColumnNames="associated_sel_id"
+                                 baseTableName="distinct_event_associated_sel"
+                                 constraintName="fk_distinct_event_associated_sel_associated_sel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sel"/>
+        
+    </changeSet>
+</databaseChangeLog>
